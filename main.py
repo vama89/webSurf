@@ -16,10 +16,36 @@
 #
 import webapp2
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+form="""
+<form action="http://www.google.com/search">
+		<p>
+			<label>
+				How much capital are you willing to invest?: 
+			</label>
+			
+			<input type="text" name="inputbox" id="moneyInvested" placeholder="Ex.100,000" autofocus required>
+		</p>
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+		<input type="checkbox" name="company" value="BA">BA<br>
+		<input type="checkbox" name="company" value="BAC">BAC<br>
+		<input type="checkbox" name="company" value="GE">GE<br>
+		<input type="checkbox" name="company" value="MSFT">MSFT<br>
+		<input type="checkbox" name="company" value="PEP">PEP<br>
+		<input type="checkbox" name="company" value="PG">PG<br>
+		<input type="checkbox" name="company" value="QCOM">QCOM<br>
+
+
+		<br/>
+
+		<input type="submit">
+
+	</form>
+"""
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+    	#self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write(form)
+
+app = webapp2.WSGIApplication([('/', MainPage)], 
+								debug=True)
