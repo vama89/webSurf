@@ -1,0 +1,13 @@
+https://appengine.google.com/
+^^ The above is to access the projects and view the site.
+
+https://console.developers.google.com/project
+^^ Seems to be another developer console
+I can delete and manage projects from here.
+
+DEPLOYMENT TO APP ENGINE SERVERS:
+The only way that I know to get it up is through the appEngine Gui. I assume I'd have to use command line commands for ubuntu.
+
+To rename the site to a www.mydomain.com
+Instructions:
+http://stackoverflow.com/questions/817809/how-to-use-google-app-engine-with-my-own-domain-not-subdomain

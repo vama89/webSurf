@@ -14,38 +14,40 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import os
 import webapp2
-
-form="""
-<form action="http://www.google.com/search">
-		<p>
-			<label>
-				How much capital are you willing to invest?: 
-			</label>
-			
-			<input type="text" name="inputbox" id="moneyInvested" placeholder="Ex.100,000" autofocus required>
-		</p>
-
-		<input type="checkbox" name="company" value="BA">BA<br>
-		<input type="checkbox" name="company" value="BAC">BAC<br>
-		<input type="checkbox" name="company" value="GE">GE<br>
-		<input type="checkbox" name="company" value="MSFT">MSFT<br>
-		<input type="checkbox" name="company" value="PEP">PEP<br>
-		<input type="checkbox" name="company" value="PG">PG<br>
-		<input type="checkbox" name="company" value="QCOM">QCOM<br>
+import jinja2
 
 
-		<br/>
+from google.appengine.ext import db
 
-		<input type="submit">
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
+								autoescape = True)
 
-	</form>
-"""
+class Handler(webapp2.RequestHandler):
+	def write(self, *a, **kw):
+		self.response.out.write(*a, **kw)
 
-class MainPage(webapp2.RequestHandler):
+	def render_str(self, template, **params):
+		t = jinja_env.get_template(template)
+		return t.render(params)
+
+	def render(self, template, **kw):
+		self.write(self.render_str(template, **kw))
+
+class MainPage(Handler):
     def get(self):
-    	#self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write(form)
+    	self.render("front.html")
 
-app = webapp2.WSGIApplication([('/', MainPage)], 
-								debug=True)
+    def post(self):
+    	title = self.request.get("title")
+    	art = self.request.get("art")	
+
+    	if title and art:
+    		self.write("thanks")
+    	else:
+    		error = "we need both a title and artwork"
+    		self.render("front.html", error = error)
+
+app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
