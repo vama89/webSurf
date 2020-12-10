@@ -19,7 +19,7 @@
 		<title>webSurf</title>
 		
 		<!-- myAppLibs -->
-		<!-- <script src="js/utils.js"></script> -->
+		<script src="js/utils.js"></script>
 
 		<!-- Playfab -->
 		<!-- <script src="https://download.playfab.com/PlayFabClientApi.js"></script>  -->
@@ -84,22 +84,15 @@
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="https://www.reddit.com/r/webSurf_featureReqs/" target="_blank">Feature Reqs.</a>
-							<a class="dropdown-item" href="https://www.reddit.com/r/webSurf_bugReporting/" target="_blank">Bugs</a>
+                            <a class="dropdown-item" href="https://www.reddit.com/r/webSurf_bugReporting/" target="_blank">Report Bugs</a>
+                            <a class="dropdown-item" href="https://websurf.tawk.help/" target="_blank">Help/Submit Ticket</a>
 						</div>
 
 					</li>
 
-					<!--
-					<li class="nav-item">
-					<a class="nav-link" href="https://www.reddit.com/r/webSurf_featureReqs/" target="_blank">Feature Reqs. <span class="sr-only">(current)</span></a>
+					<li id="firefox_chat" class="nav-item">
 					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="https://www.reddit.com/r/webSurf_bugReporting/" target="_blank">Bugs</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">Submit Ticket</a>
-					</li>
-					-->
+					
 				</ul>
 
 				<!--Temporary shutdown for practical fixes. Can reuse later possibly-->
@@ -281,18 +274,6 @@
             <div><p class="text-center">Menu - M or Esc <small>(<b>KnownBug: </b>Pressing 'm' or esc too quick after start swings the camera wildly)</small></p></div>
         </div>
 
-        <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/5fc82643a1d54c18d8efce1c/default';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-        </script>
-        <!--End of Tawk.to Script-->
+        <script>browserCheck();</script>
 	</body>
 </html>
