@@ -1,6 +1,6 @@
 ---
 layout: index
-utils: <script src="assets/js/utils.js"></script>
+utils: <script src="/webSurf/assets/js/utils.js"></script>
 ---
 <div class="webgl-content">
     <div id="unityContainer" style="width: 960px; height: 600px"></div>
@@ -132,12 +132,19 @@ utils: <script src="assets/js/utils.js"></script>
         </div>
         <div id="buyDisplay" style="display: block;">
             <div class="row justify-content-center">
-                <a href="https://onedrive.live.com/download?cid=E4851E6A061B70C1&resid=E4851E6A061B70C1%21107&authkey=ANHtXxLTczqNjkI">
+                <!-- Commented out was Original. Revamping for VR release -->
+                <!-- <a href="https://onedrive.live.com/download?cid=E4851E6A061B70C1&resid=E4851E6A061B70C1%21107&authkey=ANHtXxLTczqNjkI">
                     <button class="btn btn-primary justify-content-center" role="button" aria-pressed="true" style="width: 150px; margin-right: 10px;">
                         Singleplayer Download
                     </button>
                 </a>
                 <button class="btn btn-primary justify-content-center" role="button" aria-pressed="true" style="width: 150px; margin-left: 10px;" onclick="downloadMulti();">
+                    Multiplayer Download
+                </button> -->
+                <button class="btn btn-primary justify-content-center" role="button" aria-pressed="true" style="width: 150px; margin-right: 10px;">
+                    Singleplayer Download
+                </button>
+                <button class="btn btn-primary justify-content-center" role="button" aria-pressed="true" style="width: 150px; margin-left: 10px;">
                     Multiplayer Download
                 </button>
             </div>
@@ -149,7 +156,7 @@ utils: <script src="assets/js/utils.js"></script>
         </div>
     </div>
 
-    <div><h2 class="text-center"> <a href="/templates/controls" target="_blank">Controls</a></h2></div>
+    <div><h2 class="text-center"> <a href="/webSurf/templates/controls" target="_blank">Controls</a></h2></div>
     <div><p class="text-center"><b>Start</b> - Click on screen <small>(<b>KnownBug: </b>You may have to click around the scene multiple times)</small></p></div>
     <div><p class="text-center"><b>Move</b> - WASD</p></div>
     <div><p class="text-center"><b>Jump</b> - Spacebar (or 2x)</p></div>
